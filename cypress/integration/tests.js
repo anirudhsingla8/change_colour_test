@@ -49,15 +49,9 @@ describe('Local', () => {
         })
 
         cy.get('#reset_button').click().then(()=>{
-            cy.get(`#1`).should('have.css','background-color',`transparent`)
-            cy.get(`#2`).should('have.css','background-color',`transparent`)
-            cy.get(`#3`).should('have.css','background-color',`transparent`)
-            cy.get(`#4`).should('have.css','background-color',`transparent`)
-            cy.get(`#5`).should('have.css','background-color',`transparent`)
-            cy.get(`#6`).should('have.css','background-color',`transparent`)
-            cy.get(`#7`).should('have.css','background-color',`transparent`)
-            cy.get(`#8`).should('have.css','background-color',`transparent`)
-            cy.get(`#9`).should('have.css','background-color',`transparent`)
+            for(let i=1;i<=9;i++){
+                cy.get(`#${i}`).should('have.css','background-color',`rgba(0, 0, 0, 0)`)
+            }
             })
         })
 })
