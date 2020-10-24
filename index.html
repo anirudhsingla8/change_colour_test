@@ -8,6 +8,7 @@
 <style>
     div{
         border: 1px solid black;
+        background-color: transparent;
     }
 </style>
 <body>
@@ -31,7 +32,7 @@
 <input id="block_id">
 <input id="colour_id">
 <button id="change_button">Change Colour</button>
-
+<button id="reset_button">Reset</button>
 </body>
 <script>
     let flag = false;
@@ -56,6 +57,11 @@
         }else{
             console.log('else')
         }
+        $('#reset_button').click(()=>{
+            for(let i=1;i<=9;i++){
+                $(`#${i}`).css('background-color','transparent')
+            }
+        })
     })
     
 </script>

@@ -13,6 +13,7 @@ describe('Local', () => {
         let box_colour;
         let old_box;
         let flag = true;
+
         cy.get('#change_button').click().then(()=>{
             cy.get('#block_id').invoke('val').then(some_text =>{
                 box_id=some_text
@@ -46,5 +47,17 @@ describe('Local', () => {
                 cy.get(`#${old_box}`).should('have.css','background-color',`transparent`)
             }
         })
-    })
+
+        cy.get('#reset_button').click().then(()=>{
+            cy.get(`#1`).should('have.css','background-color',`transparent`)
+            cy.get(`#2`).should('have.css','background-color',`transparent`)
+            cy.get(`#3`).should('have.css','background-color',`transparent`)
+            cy.get(`#4`).should('have.css','background-color',`transparent`)
+            cy.get(`#5`).should('have.css','background-color',`transparent`)
+            cy.get(`#6`).should('have.css','background-color',`transparent`)
+            cy.get(`#7`).should('have.css','background-color',`transparent`)
+            cy.get(`#8`).should('have.css','background-color',`transparent`)
+            cy.get(`#9`).should('have.css','background-color',`transparent`)
+            })
+        })
 })
