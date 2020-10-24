@@ -1,0 +1,62 @@
+<!DOCTYdivE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    div{
+        border: 1px solid black;
+    }
+</style>
+<body>
+<table style="width:100%">
+    <tr>
+        <div id="1" value="1">1</div>
+        <div id="2" value="2">2</div>
+        <div id="3" value="3">3</div>
+    </tr>
+    <tr>
+        <div id="4" value="4">4</div>
+        <div id="5" value="5">5</div>
+        <div id="6" value="6">6</div>
+    </tr>
+    <tr>
+        <div id="7" value="7">7</div>
+        <div id="8" value="8">8</div>
+        <div id="9" value="9">9</div>
+    </tr>
+</table>
+<input id="block_id">
+<input id="colour_id">
+<button id="change_button">Change Colour</button>
+
+</body>
+<script>
+    let flag = false;
+    let div_block;
+    let old_div_block;
+    let colour_block;
+    $('#change_button').click(function () {
+        console.log('clicked')
+        div_block = document.getElementById('block_id').value;
+        colour_block = document.getElementById('colour_id').value;
+        if(parseInt(div_block)>=1 && parseInt(div_block)<=9 && flag == false){
+            console.log('if')
+            old_div_block=div_block
+            $(`#${old_div_block}`).css('background-color',`${colour_block}`);
+            $(`#${div_block}`).css('background-color',`${colour_block}`);
+            flag = true
+        }else if(parseInt(div_block)>=1 && parseInt(div_block)<=9 && flag == true){
+            console.log('else if')
+            $(`#${old_div_block}`).css('background-color',`transparent`);
+            $(`#${div_block}`).css('background-color',`${colour_block}`);
+            old_div_block=div_block
+        }else{
+            console.log('else')
+        }
+    })
+    
+</script>
+</html>
